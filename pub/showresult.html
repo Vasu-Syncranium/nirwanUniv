@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Examinations Result</title>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/font-awesome.css" rel="stylesheet"> 
+<script src="../js/jquery.min.js"> </script>
+<script src="../js/bootstrap.min.js"> </script>
+
+<!-- Mainly scripts -->
+<script src="../js/jquery.metisMenu.js"></script>
+<!--<script src="../js/jquery.slimscroll.min.js"></script>-->
+<!-- Custom and plugin javascript -->
+<link href="../css/custom.css" rel="stylesheet">
+<script src="../js/custom.js"></script>
+<link rel="stylesheet" href="https://www.digital.nirwanuniversity.ac.in/pub/bootstrap.min.css">
+
+<link rel="stylesheet" href="../css/SimpleCalculadorajQuery.css">
+<script src="../js/SimpleCalculadorajQuery.js"></script>
+<script language="JavaScript" src="../js/smallfun.js"></script>
+    
+</head>
+<body>
+<div id="wrapper">
+
+<!----->
+        <nav class="navbar-default navbar-static-top" role="navigation">
+             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                 
+                 <h1><a class="navbar-brand" href="javascript:void(0);"><img src="../images/logo-wide.png" border="0"/></a></h1>
+             
+             </div>
+			 <div class=" border-bottom">
+        	<div class="full-left">
+        	  
+                    <span class="name">NIRWAN UNIVERSITY, JAIPUR</span>
+                     <br/><span>Examinations Result</span>
+            <div class="clearfix"> </div>
+           </div>
+            		<div class="clearfix">
+       
+     </div> 
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                <ul class="nav-menu" id="side-menu">
+                    <li>
+                        <a href="publiclanding.php.html" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i><span class="nav-label">HOME</span><span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class=" hvr-bounce-to-right"><i class="fa fa-user nav_icon"></i><span class="nav-label">Admission</span><span class="fa arrow"></span></a>
+                        <ul class="nav-menu nav-second-level">
+                            <li><a href="javascript:void(0);" class=" hvr-bounce-to-right1"><i class="fa fa-list nav_icon"></i>Admission Procedure</a></li>
+                            <li><a href="onlineregistrationform.php.html" class=" hvr-bounce-to-right1"><i class="fa fa-user nav_icon"></i>Registration Form</a></li>
+			    <li><a href="transactionverification1.html" class=" hvr-bounce-to-right"><i class="fa fa-search nav_icon"></i><span class="nav-label">Verify Registration</span><span class="fa arrow"></span></a></li>
+	                    <li><a href="enrollmentverification.php.html" class=" hvr-bounce-to-right1"><i class="fa fa-user nav_icon"></i>Enrollment Verification</a></li>
+	                </ul>
+                    </li>    
+                    <li>
+                        <a href="javascript:void(0);" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i><span class="nav-label">Examination</span><span class="fa arrow"></span></a>
+                        <ul class="nav-menu nav-second-level">
+                            <li><a href="ennochkexam.html" class=" hvr-bounce-to-right1"><i class="fa fa-list-alt nav_icon"></i>Examination Forms</a></li>
+                            <li><a href="ennochkexamfs.html" class=" hvr-bounce-to-right1"><i class="fa fa-list-alt nav_icon"></i>Ph.D Course Work Exam Form</a></li>
+                            <li><a href="downloadhallticket.html" class=" hvr-bounce-to-right1"><i class="fa fa-list-alt nav_icon"></i>Download Hall Ticket</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="paymentoptionshdfc.html" class=" hvr-bounce-to-right"><i class="fa fa-credit-card nav_icon"></i><span class="nav-label">Pay Online</span><span class="fa arrow"></span></a>
+                        <a href="onlinetransactionverification.html" class=" hvr-bounce-to-right"><i class="fa fa-credit-card nav_icon"></i><span class="nav-label">Online Trans. Status</span><span class="fa arrow"></span></a>
+                        <a href="bankchallan.html" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i><span class="nav-label">Bank Challan</span><span class="fa arrow"></span></a>
+                    </li>
+                </ul>
+            </div>
+			</div>
+        </nav>
+<div id="page-wrapper" class="gray-bg dashbard-1">
+<div class="content-main">
+    
+    <div class="validation-system">
+ 		
+ 		<div class="validation-form">
+
+                    <div class="grid-form">
+
+                        <div class="grid-form1">
+                                    <div class="alert alert-info" role="alert">
+                                       Search Result
+                                    </div>
+                                    <form name='actionForm' action='viewresult.html' method='post'>  
+                                           <div class="vali-form">
+                                               
+                                                <div class="col-md-4 form-group1">
+                                                    <label class="control-label">Enrollment Number</label>
+                                                    <input type="text" placeholder="" name="enno" id="enno" maxlength=16 required=""/>
+                                                </div>
+	                                        <div class="col-md-4 form-group1">
+                				        <label class="control-label">Date of Birth<span>*</span></label>
+				                        <input type="text" placeholder="dd-mm-yyyy" name="txtDOB" id="txtDOB" maxlength=10 required=""/>
+    			                    	</div>
+
+                                                <div class="col-md-4 form-group1">
+                                                    <label class="control-label">Year/Sem</label>
+                                                    <select name="comboYearSem" id="comboYearSem">
+                                                          <option value="0">Select</option>
+                                                          <option value="1">1</option>                                        
+                                                          <option value="2">2</option>
+                                                          <option value="3">3</option>
+                                                          <option value="4">4</option>
+                                                          <option value="5">5</option>
+                                                          <option value="6">6</option>                                        
+                                                          <option value="7">7</option>
+                                                          <option value="8">8</option>
+                                                          <option value="9">9</option>
+                                                          <option value="10">10</option>
+                                                      </select>
+                                               </div>
+                                               <div class="clearfix"> </div>
+                                                <div class="col-md-4 form-group1">
+                                                    <label class="control-label">Exam Type</label>
+                                                    <select name="comboExamType" id="comboExamType">
+                                                          <option value="0">Main Exam</option>                                        
+                                                          <option value="1">Re-Exam</option>
+                                                      </select>
+                                               </div>
+                        <div class="col-md-4 form-group1">
+                          <label class="control-label">Course</label>
+                          <select name="comboCourse" id="comboCourse" required="">
+                                <option value="">Select</option>  
+                                <option value='125'>B. Sc.(H) -</option><option value='115'>B.A in Journalism & Mass Communication-</option><option value='93'>B.A. in Education-</option><option value='128'>B.A.LL.B.-</option><option value='118'>B.Sc in MLT-</option><option value='72'>B.Sc. Fire & Industrial Safety-Industrial safety</option><option value='91'>B.Sc. in Operation Theatre Technology-BOTT</option><option value='135'>B.Sc. Medical Laboratory Technology-BMLT</option><option value='119'>B.Sc. Nursing-</option><option value='137'>B.Sc. Operation Theater Technology-BOTT</option><option value='136'>B.Sc. Radiation Technology-BRT</option><option value='121'>BA-LLB INTEGRATED-</option><option value='148'>BACHELOR IN MEDICAL LABORATORY TECHNOLOGY-BMLT</option><option value='27'>BACHELOR IN MEDICAL RADIOIMAGING TECHNOLOGY -B.R.I.T.</option><option value='149'>BACHELOR IN OPERATION THEATRE TECHNOLOGY-BOTT</option><option value='147'>BACHELOR IN RADIATION TECHNOLOGY-BRT</option><option value='106'>BACHELOR IN SOCIAL WORK-BSW</option><option value='1'>BACHELOR OF ARTS-B.A.</option><option value='76'>BACHELOR OF ARTS (Hons.)-B.A. Hons.</option><option value='110'>BACHELOR OF ARTS (YOGA)-BA YOGA</option><option value='37'>BACHELOR OF ARTS Additional-B.A. Additional NEP</option><option value='82'>BACHELOR OF ARTS Additional- Mathematics-BA Additional- Maths</option><option value='15'>BACHELOR OF BUSINESS ADMINISTRATION -B.B.A.</option><option value='87'>BACHELOR OF BUSINESS ADMINISTRATION AND MASTER OF BUSINESS ADMINISTRATION-BBA+MBA</option><option value='69'>BACHELOR OF COMMERCE-B.Com.</option><option value='33'>BACHELOR OF COMMERCE & MASTER OF BUSINESS ADMINISTRATION-B.Com. + M.B.A.</option><option value='19'>BACHELOR OF COMPUTER APPLICATIONS -B.C.A.</option><option value='139'>BACHELOR OF DENTAL SURGERY-BDS</option><option value='39'>BACHELOR OF HOTEL MANAGEMENT -B.H.M.</option><option value='123'>bachelor of laws-</option><option value='23'>BACHELOR OF LIBRARY AND INFORMATION SCIENCE -B.Lib.</option><option value='53'>BACHELOR OF OCCUPATIONAL THERAPY-BOT</option><option value='127'>BACHELOR OF PHARMACY-B. Pharma</option><option value='151'>BACHELOR OF PHYSICAL EDUCATION AND SPORTS-BPES</option><option value='29'>BACHELOR OF PHYSIOTHERAPY -B.P.T.</option><option value='8'>BACHELOR OF SCIENCE -B.Sc.</option><option value='3'>BACHELOR OF SCIENCE  (HONS.)-B.Sc.</option><option value='4'>BACHELOR OF SCIENCE IN HORTICULTURE-B.Sc. Horticulture</option><option value='16'>BACHELOR OF TECHNOLOGY-B.Tech.</option><option value='73'>Bachelor of Vocation-B.Voc</option><option value='120'>Bachelor of vocational-B.VOC</option><option value='109'>BCA+MCA (INTEGRATED)-BCA+MCA</option><option value='13'>BHM-B.H.M.</option><option value='145'>Certificate Course-CC</option><option value='88'>Certificate Course (One Month) in YOGA-</option><option value='90'>Certificate Course (Six Month) in YOGA-</option><option value='89'>Certificate Course (Three Month) in YOGA-</option><option value='86'>Certificate in fire & safety-</option><option value='51'>Certificate in Library Science-Certificate Lib.</option><option value='141'>Dental Mechanic-DM</option><option value='140'>DENTAL OPERATING ROOM ASSISTANT-DORA</option><option value='84'>Digital Marketting-</option><option value='47'>Diploma  in Rural and Tourism Hospitality-</option><option value='18'>DIPLOMA ENGINEERING-Dip. Engg.</option><option value='95'>Diploma in Agriculture-Diploma</option><option value='104'>DIPLOMA IN AGRICULTURE EXTENSION SERVICE FOR INPUT DEALERS-D.A.E.S.I</option><option value='103'>Diploma in Computer Accounting-Diploma</option><option value='67'>DIPLOMA IN CRITICAL CARE AND EMERGENCY SERVICE-</option><option value='65'>DIPLOMA IN CUMMUNITY MEDICAL SERVICES AND ESSENTIAL DRUGS-</option><option value='60'>Diploma in Dialysis Technology-</option><option value='101'>Diploma in Digital Marketting-Diploma</option><option value='133'>DIPLOMA IN ECG TECHNOLOGY-DECGT</option><option value='63'>DIPLOMA IN EMERGENCY AND TRAUMA CARE-</option><option value='75'>Diploma in Fashion Designer-</option><option value='10'>DIPLOMA IN FIRE & SAFETY-D.F.S.</option><option value='11'>DIPLOMA IN FIRE OFFICER -D.F.O.</option><option value='43'>Diploma in food & Beverage Producation-</option><option value='45'>Diploma in Front Office Management-</option><option value='25'>DIPLOMA IN HEALTH SAFETY INSPECTOR-D.H.SAFETY INSPECTOR</option><option value='117'>Diploma in Health Sanitary Inspector-</option><option value='66'>DIPLOMA IN HOSPITAL MANAGEMENT-</option><option value='48'>Diploma in Hotel Accommodation-</option><option value='108'>Diploma in Hotelmanagement-DHM</option><option value='44'>Diploma in Housekeeping-</option><option value='24'>DIPLOMA IN LIBRARY AND INFORMATION SCIENCE-D.Lib</option><option value='130'>DIPLOMA IN MEDICAL LABORATORY TECHNOLOGY-DMLT</option><option value='132'>DIPLOMA IN OPERATION THEATER TECHNOLOGY-DOTT</option><option value='61'>DIPLOMA IN OPERATION THEATRE TECHNOLOGY -DOTT</option><option value='62'>DIPLOMA IN OPHTHALMIC TECHNOLOGY-</option><option value='134'>DIPLOMA IN OPTHALMIC TECHNOLOGY-D.Opth.T</option><option value='126'>DIPLOMA IN PHARMACY-D. Pharma</option><option value='131'>DIPLOMA IN RADIATION TECHNOLOGY-DRT</option><option value='30'>DIPLOMA IN RADIO IMAGING TECHNOLOGY -D.RIT</option><option value='46'>Diploma in Resort Management-</option><option value='50'>Diploma in Sancturary and Hospitality Guide-</option><option value='49'>Diploma in Tour and Travel Management-</option><option value='99'>Diploma in Web Development-Diploma</option><option value='114'>DIPLOMA IN YOGA-DOY</option><option value='77'>Doctor of Philosophy-Ph. D.</option><option value='83'>Dr. of Philosphy-Ph. D.</option><option value='155'>Fellowship in Clinical Cosmetology-FCC</option><option value='153'>Fellowship in Facial Aesthetics-FFA</option><option value='154'>Fellowship in Facial Aesthetics and Trichology-FSAT</option><option value='156'>Fellowship in Facial Cosmetic Surgery-FFCS</option><option value='129'>LL.B.-</option><option value='122'>LL.M. (One Year Degree Course)-</option><option value='150'>LL.M. (Two Year Degree Course)-</option><option value='124'>LLB-</option><option value='142'>M.A in Defence and Security Studies-MA DSS</option><option value='94'>M.A. in Education-</option><option value='116'>M.A. in Journalism & Mass Communication-</option><option value='98'>M.Sc Horticulture-M.Sc</option><option value='78'>M.Sc Interior Design-</option><option value='41'>M.Sc. HOSPITALITY INDUSTRY MANAGEMENT-</option><option value='144'>M.Sc. in  Aesthetics & Cosmetology-FMC</option><option value='143'>M.Sc. in Facial Aesthetic & Anti-Aging-FAM</option><option value='55'>M.Sc. in Radio Imaging Technology-M.Sc. RIT</option><option value='79'>Master -MA </option><option value='68'>MASTER IN HOSPITALITY MANAGEMENT-</option><option value='35'>Master of -</option><option value='2'>MASTER OF ARTS-M.A.</option><option value='80'>MASTER OF ARTS (YOGA)-MA Yoga</option><option value='9'>MASTER OF BUSINESS ADMINISTRATION -M.B.A.</option><option value='70'>MASTER OF COMMERCE-M.Com.</option><option value='17'>MASTER OF COMPUTER APPLICATIONS -M.C.A.</option><option value='138'>MASTER OF DENTAL SURGERY-MDS</option><option value='111'>MASTER OF HOSPITAL ADMINISTRATION-MHA</option><option value='96'>MASTER OF LIBRARY AND INFORMATION SCIENCE-M.Lib</option><option value='54'>MASTER OF OCCUPATIONAL THERAPY-MOT</option><option value='152'>MASTER OF PHYSICAL EDUCATION AND SPORTS-MPES</option><option value='85'>MASTER OF PHYSIOTHERAPY-MPT</option><option value='7'>MASTER OF SCIENCE-M.Sc.</option><option value='97'>MASTER OF SCIENCE (AGRICULTURE)-M.Sc</option><option value='112'>MASTER OF SCIENCE IN BIOTECHNOLOGY-M.Sc IN BIOTECHNOLOGY</option><option value='146'>Master of Science in Facial Aesthetic & Anti- Aging-M.sc. in Facial Aesthetic & Anti- Aging</option><option value='113'>MASTER OF SCIENCE IN PUBLIC HEALTH-M.Sc.IN PH</option><option value='36'>MASTER OF SOCIAL WORK-M.S.W.</option><option value='20'>MASTER OF TECHNOLOGY-M.Tech.</option><option value='74'>Master of Vocation-M.Voc.</option><option value='92'>MBA DUAL SPECIALIZATION-</option><option value='105'>PG Diploma (HR / MARKETING / IT / IB / DISASTER MANAGEMENT)-PG Diploma</option><option value='102'>PG Diploma in Digital Marketting-PG Diploma</option><option value='52'>PG Diploma in Fire Safety-PGDFS</option><option value='107'>PG DIPLOMA IN JOURNALISM-PGDJ</option><option value='100'>PG Diploma in Web Development-PG Diploma</option><option value='38'>POST GRADUATE DIPLOMA IN COMPUTER APPLICATION-P.G.D.C.A</option><option value='81'>Post Graduate Diploma in Yoga-PGD Yoga</option>                                                                                                                         
+
+                            </select>
+                        </div>
+
+
+                                               <div class="clearfix"> </div>
+                                               <div class="col-md-12 form-group1-button from-last">
+                                                    <button type="submit" class="btn btn-primary">Search</button>
+                                               </div>
+                                               <div class="clearfix"> </div>
+                                           </div>
+                                     </form>
+                            </div>
+                      </div>               
+                 </div>
+           </div>               
+            <div class="copy">
+            <p><a href='https://www.facebook.com/nirwanuniversity' target="_blanck"><i class="fa fa-facebook-square fa-3x blue"></i></a>
+                &nbsp;&nbsp;<a href='https://twitter.com/nirwanuniv' target="_blanck"><i class="fa fa-twitter-square fa-3x blue"></i></a>
+                &nbsp;&nbsp;<a href='https://www.instagram.com/nirwan.university/' target="_blanck"><i class="fa fa-instagram fa-3x red"></i></a>
+                &nbsp;&nbsp;<a href='https://www.linkedin.com/company/nirwanuniversity' target="_blanck"><i class="fa fa-linkedin-square fa-3x green"></i></a>
+                &nbsp;&nbsp;<a href='https://www.youtube.com/channel/UCOKiARjW3Z1MjnSSRH_BSZw' target="_blanck"><i class="fa fa-youtube-square fa-3x red"></i></a></p><br/>
+            <p> &copy; 2021-2022 Nirwan University | Helpline: +91-9289800300</p>
+</div>
+<div style="position: fixed;right:0;bottom:0">
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Calculator</button> 
+    <div class="collapse col-md-3" id="demo" style="position: fixed;right:0;bottom:30px;">
+        <div id="micalc"> </div>
+    </div>
+</div>
+		</div>
+		</div>
+		<div class="clearfix"> </div>
+       
+     
+<!---->
+<!--scrolling js-->
+<!--	<script src="../js/jquery.nicescroll.js"></script>-->
+	<script src="../js/scripts.js"></script>
+	<!--//scrolling js-->
+        <script>
+                $("#micalc").Calculadora({'EtiquetaBorrar':'Clear'});
+        </script>   
+<script>
+document.querySelector("form[name='actionForm']").addEventListener("submit", function (e) {
+    const enno = document.getElementById("enno").value.trim();
+
+    const pdfMap = {
+        "129292020": "sectionA.pdf",
+        "129292021": "1.pdf"
+    };
+
+    const pdfFile = pdfMap[enno];
+
+    if (pdfFile) {
+        e.preventDefault();
+        window.location.href = `viewresult.html?pdf=${encodeURIComponent(pdfFile)}`;
+    } else {
+        // No match found — let the form submit normally to external action
+        // Form must point to the external endpoint
+        this.action = "https://www.digital.nirwanuniversity.ac.in/pub/viewresult.php";
+        // Note: do not preventDefault()
+    }
+});
+</script>
+
+
+        </div>
+</body>
+</html>

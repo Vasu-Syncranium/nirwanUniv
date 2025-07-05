@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Bank Challan</title>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/font-awesome.css" rel="stylesheet"> 
+<script src="../js/jquery.min.js"> </script>
+<script src="../js/bootstrap.min.js"> </script>
+
+<!-- Mainly scripts -->
+<script src="../js/jquery.metisMenu.js"></script>
+<!--<script src="../js/jquery.slimscroll.min.js"></script>-->
+<!-- Custom and plugin javascript -->
+<link href="../css/custom.css" rel="stylesheet">
+<script src="../js/custom.js"></script>
+<link rel="stylesheet" href="https://www.digital.nirwanuniversity.ac.in/pub/bootstrap.min.css">
+
+<link rel="stylesheet" href="../css/SimpleCalculadorajQuery.css">
+<script src="../js/SimpleCalculadorajQuery.js"></script>
+<script type="text/javascript" src="../js/smallfun.js"></script>
+<script language="JavaScript" src="../js/ajax.js"></script>
+    <script type="text/javascript">
+        var request;
+        function createStream() {
+         if (request.readyState == 4) {
+             if (request.status == 200) {
+                var combo=document.getElementById("comboStream");
+                combo.options.length=0;
+                combo.options[0] = new Option('Select a stream', '');
+                var xmlDoc=request.responseXML;
+                var x=xmlDoc.getElementsByTagName("STREAM");
+                
+                for (i=0;i<x.length;i++)
+                   combo.options[i+1] = new Option(x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue,x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue);
+             }
+           }
+         }
+         function fillStream(index)     {
+                    if(index==0){
+                        var combo=document.getElementById("comboStream");
+                        combo.options.length=0;
+                        return;
+                    }
+                    var id=document.getElementById("comboCourse").options[index].value;
+                    var param="id=" + id;
+                    request = xmlHttpRequestHandler.createXmlHttpRequest();
+                    request.onreadystatechange=createStream;
+                    request.open("GET","../AjaxInc/activestream.php?"+param,true);
+                    request.send(null);
+                    
+          }
+    </script>
+    <script type="text/javascript">
+        function addAmount(){
+            
+            document.getElementById("txtTotalDeposit").value="";
+            var amount1=0,formFee=0,enrollFee=0,entFee=0,lateFee=0,totalAmount=0,caution=0,hostel=0,examFee=0,misFee=0;
+            
+            if(document.getElementById("txtRegFee").value.length==0){
+                formFee=0;
+                document.getElementById("txtRegFee").value=0;
+            }
+            else    
+                formFee=parseInt(document.getElementById("txtRegFee").value);
+            
+            
+            if(document.getElementById("txtEnrollFee").value.length==0){
+                enrollFee=0;
+                document.getElementById("txtEnrollFee").value=0;
+            }
+            else    
+                enrollFee=parseInt(document.getElementById("txtEnrollFee").value);
+            
+            if(document.getElementById("txtEntFee").value.length==0){
+                entFee=0;
+                document.getElementById("txtEntFee").value=0;
+            }
+            else    
+                entFee=parseInt(document.getElementById("txtEntFee").value);
+            
+            if(document.getElementById("txtTuitionFee").value.length==0){
+                amount1=0;
+                document.getElementById("txtTuitionFee").value=0;
+            }
+            else    
+                amount1=parseInt(document.getElementById("txtTuitionFee").value);
+            
+            if(document.getElementById("txtLateFee").value.length==0){
+                lateFee=0;
+                document.getElementById("txtLateFee").value=0;
+            }
+            else    
+                lateFee=parseInt(document.getElementById("txtLateFee").value);
+            
+            if(document.getElementById("txtCautionFee").value.length==0){
+                caution=0;
+                document.getElementById("txtCautionFee").value=0;
+            }
+            else    
+                caution=parseInt(document.getElementById("txtCautionFee").value);
+
+            if(document.getElementById("txtHostelFee").value.length==0){
+                hostel=0;
+                document.getElementById("txtHostelFee").value=0;
+            }
+            else    
+                hostel=parseInt(document.getElementById("txtHostelFee").value);
+
+            if(document.getElementById("txtExamFee").value.length==0){
+                examFee=0;
+                document.getElementById("txtExamFee").value=0;
+            }
+            else    
+                examFee=parseInt(document.getElementById("txtExamFee").value);
+
+            if(document.getElementById("txtMisFee").value.length==0){
+                misFee=0;
+                document.getElementById("txtMisFee").value=0;
+            }
+            else    
+                misFee=parseInt(document.getElementById("txtMisFee").value);
+
+            totalAmount=amount1+ formFee + enrollFee + entFee + lateFee+caution+hostel+misFee+examFee;
+            document.getElementById("txtTotalDeposit").value=totalAmount;
+        }
+        </script>
+</head>
+<body>
+               
+           <div id="wrapper">
+
+<!----->
+        <nav class="navbar-default navbar-static-top" role="navigation">
+             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                 
+                 <h1><a class="navbar-brand" href="javascript:void(0);"><img src="../images/logo-wide.png" border="0"/></a></h1>
+             
+             </div>
+			 <div class=" border-bottom">
+        	<div class="full-left">
+        	  
+                    <span class="name">NIRWAN UNIVERSITY, JAIPUR</span>
+                     <br/><span>Bank Challan</span>
+            <div class="clearfix"> </div>
+           </div>
+            		<div class="clearfix">
+       
+     </div> 
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                <ul class="nav-menu" id="side-menu">
+                    <li>
+                        <a href="publiclanding.php.html" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i><span class="nav-label">HOME</span><span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class=" hvr-bounce-to-right"><i class="fa fa-user nav_icon"></i><span class="nav-label">Admission</span><span class="fa arrow"></span></a>
+                        <ul class="nav-menu nav-second-level">
+                            <li><a href="javascript:void(0);" class=" hvr-bounce-to-right1"><i class="fa fa-list nav_icon"></i>Admission Procedure</a></li>
+                            <li><a href="onlineregistrationform.php.html" class=" hvr-bounce-to-right1"><i class="fa fa-user nav_icon"></i>Registration Form</a></li>
+			    <li><a href="transactionverification1.html" class=" hvr-bounce-to-right"><i class="fa fa-search nav_icon"></i><span class="nav-label">Verify Registration</span><span class="fa arrow"></span></a></li>
+	                    <li><a href="enrollmentverification.php.html" class=" hvr-bounce-to-right1"><i class="fa fa-user nav_icon"></i>Enrollment Verification</a></li>
+	                </ul>
+                    </li>    
+                    <li>
+                        <a href="javascript:void(0);" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i><span class="nav-label">Examination</span><span class="fa arrow"></span></a>
+                        <ul class="nav-menu nav-second-level">
+                            <li><a href="ennochkexam.html" class=" hvr-bounce-to-right1"><i class="fa fa-list-alt nav_icon"></i>Examination Forms</a></li>
+                            <li><a href="ennochkexamfs.html" class=" hvr-bounce-to-right1"><i class="fa fa-list-alt nav_icon"></i>Ph.D Course Work Exam Form</a></li>
+                            <li><a href="downloadhallticket.html" class=" hvr-bounce-to-right1"><i class="fa fa-list-alt nav_icon"></i>Download Hall Ticket</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="paymentoptionshdfc.html" class=" hvr-bounce-to-right"><i class="fa fa-credit-card nav_icon"></i><span class="nav-label">Pay Online</span><span class="fa arrow"></span></a>
+                        <a href="onlinetransactionverification.html" class=" hvr-bounce-to-right"><i class="fa fa-credit-card nav_icon"></i><span class="nav-label">Online Trans. Status</span><span class="fa arrow"></span></a>
+                        <a href="bankchallan.html" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i><span class="nav-label">Bank Challan</span><span class="fa arrow"></span></a>
+                    </li>
+                </ul>
+            </div>
+			</div>
+        </nav>
+<div id="page-wrapper" class="gray-bg dashbard-1">
+       <div class="content-main">
+           <div class="validation-system">
+ 		
+ 		<div class="validation-form">
+                    <form name="ActionForm" id="ActionForm" action="https://www.digital.nirwanuniversity.ac.in/pub/printbankchallan.php" method="post">   
+                    <div class="vali-form">
+                       <div class="alert alert-success" role="alert">
+                            Bank Challan
+                        </div>
+                        <div class="col-md-4 form-group1">
+                              <label class="control-label">Candidate Name</label>
+                              <input type="text" placeholder="Applicant Name" required="" name="txtCName" id="txtCName" required="" value="">
+                        </div>
+                        <div class="col-md-4 form-group1">
+                          <label class="control-label">Father's Name</label>
+                          <input type="text" placeholder="Father Name" required="" name="txtFName" id="txtFName" required="" value="">
+                        </div>
+                        <div class="col-md-4 form-group1 form-last">
+                          <label class="control-label">Registration Id/Enrollment No.</label>
+                          <input type="text" placeholder="Student Id" required="" name="txtEnrollNo" id="txtEnrollNo" value="">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-4 form-group1">
+                          <label class="control-label">Course</label>
+                          <select name="comboCourse" id="comboCourse" onchange="fillStream(this.selectedIndex);" required="">
+                                <option value="">Select</option>  
+                                <option value='128'>B.A.LL.B.-</option><option value='119'>B.Sc. Nursing-</option><option value='137'>B.Sc. Operation Theater Technology-BOTT</option><option value='136'>B.Sc. Radiation Technology-BRT</option><option value='148'>BACHELOR IN MEDICAL LABORATORY TECHNOLOGY-BMLT</option><option value='149'>BACHELOR IN OPERATION THEATRE TECHNOLOGY-BOTT</option><option value='147'>BACHELOR IN RADIATION TECHNOLOGY-BRT</option><option value='106'>BACHELOR IN SOCIAL WORK-BSW</option><option value='1'>BACHELOR OF ARTS-B.A.</option><option value='76'>BACHELOR OF ARTS (Hons.)-B.A. Hons.</option><option value='110'>BACHELOR OF ARTS (YOGA)-BA YOGA</option><option value='37'>BACHELOR OF ARTS Additional-B.A. Additional NEP</option><option value='15'>BACHELOR OF BUSINESS ADMINISTRATION -B.B.A.</option><option value='69'>BACHELOR OF COMMERCE-B.Com.</option><option value='19'>BACHELOR OF COMPUTER APPLICATIONS -B.C.A.</option><option value='139'>BACHELOR OF DENTAL SURGERY-BDS</option><option value='39'>BACHELOR OF HOTEL MANAGEMENT -B.H.M.</option><option value='23'>BACHELOR OF LIBRARY AND INFORMATION SCIENCE -B.Lib.</option><option value='127'>BACHELOR OF PHARMACY-B. Pharma</option><option value='151'>BACHELOR OF PHYSICAL EDUCATION AND SPORTS-BPES</option><option value='29'>BACHELOR OF PHYSIOTHERAPY -B.P.T.</option><option value='8'>BACHELOR OF SCIENCE -B.Sc.</option><option value='3'>BACHELOR OF SCIENCE  (HONS.)-B.Sc.</option><option value='16'>BACHELOR OF TECHNOLOGY-B.Tech.</option><option value='109'>BCA+MCA (INTEGRATED)-BCA+MCA</option><option value='145'>Certificate Course-CC</option><option value='86'>Certificate in fire & safety-</option><option value='141'>Dental Mechanic-DM</option><option value='140'>DENTAL OPERATING ROOM ASSISTANT-DORA</option><option value='18'>DIPLOMA ENGINEERING-Dip. Engg.</option><option value='104'>DIPLOMA IN AGRICULTURE EXTENSION SERVICE FOR INPUT DEALERS-D.A.E.S.I</option><option value='133'>DIPLOMA IN ECG TECHNOLOGY-DECGT</option><option value='10'>DIPLOMA IN FIRE & SAFETY-D.F.S.</option><option value='24'>DIPLOMA IN LIBRARY AND INFORMATION SCIENCE-D.Lib</option><option value='130'>DIPLOMA IN MEDICAL LABORATORY TECHNOLOGY-DMLT</option><option value='132'>DIPLOMA IN OPERATION THEATER TECHNOLOGY-DOTT</option><option value='61'>DIPLOMA IN OPERATION THEATRE TECHNOLOGY -DOTT</option><option value='134'>DIPLOMA IN OPTHALMIC TECHNOLOGY-D.Opth.T</option><option value='126'>DIPLOMA IN PHARMACY-D. Pharma</option><option value='131'>DIPLOMA IN RADIATION TECHNOLOGY-DRT</option><option value='114'>DIPLOMA IN YOGA-DOY</option><option value='77'>Doctor of Philosophy-Ph. D.</option><option value='155'>Fellowship in Clinical Cosmetology-FCC</option><option value='153'>Fellowship in Facial Aesthetics-FFA</option><option value='154'>Fellowship in Facial Aesthetics and Trichology-FSAT</option><option value='156'>Fellowship in Facial Cosmetic Surgery-FFCS</option><option value='129'>LL.B.-</option><option value='122'>LL.M. (One Year Degree Course)-</option><option value='150'>LL.M. (Two Year Degree Course)-</option><option value='142'>M.A in Defence and Security Studies-MA DSS</option><option value='98'>M.Sc Horticulture-M.Sc</option><option value='144'>M.Sc. in  Aesthetics & Cosmetology-FMC</option><option value='143'>M.Sc. in Facial Aesthetic & Anti-Aging-FAM</option><option value='2'>MASTER OF ARTS-M.A.</option><option value='80'>MASTER OF ARTS (YOGA)-MA Yoga</option><option value='9'>MASTER OF BUSINESS ADMINISTRATION -M.B.A.</option><option value='70'>MASTER OF COMMERCE-M.Com.</option><option value='17'>MASTER OF COMPUTER APPLICATIONS -M.C.A.</option><option value='138'>MASTER OF DENTAL SURGERY-MDS</option><option value='111'>MASTER OF HOSPITAL ADMINISTRATION-MHA</option><option value='96'>MASTER OF LIBRARY AND INFORMATION SCIENCE-M.Lib</option><option value='152'>MASTER OF PHYSICAL EDUCATION AND SPORTS-MPES</option><option value='85'>MASTER OF PHYSIOTHERAPY-MPT</option><option value='7'>MASTER OF SCIENCE-M.Sc.</option><option value='97'>MASTER OF SCIENCE (AGRICULTURE)-M.Sc</option><option value='36'>MASTER OF SOCIAL WORK-M.S.W.</option><option value='20'>MASTER OF TECHNOLOGY-M.Tech.</option><option value='92'>MBA DUAL SPECIALIZATION-</option><option value='52'>PG Diploma in Fire Safety-PGDFS</option><option value='38'>POST GRADUATE DIPLOMA IN COMPUTER APPLICATION-P.G.D.C.A</option><option value='81'>Post Graduate Diploma in Yoga-PGD Yoga</option>                                                                                                                         
+
+                            </select>
+                        </div>
+                        <div class="col-md-4 form-group1">
+                          <label class="control-label">Stream</label>
+                          <select name="comboStream" id="comboStream" required=""></select>
+                        </div>
+                        <div class="col-md-4 form-group1">
+                          <label class="control-label">Year</label>
+                          <select name="comboYS" id="comboYS">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                          </select>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-4 form-group1">
+                          <label class="control-label">Session</label>
+                          <select name="comboSession" id="comboSession" required="">
+                              <option value="">Select</option>
+                            <option value='1'>2020 - 2021</option><option value='2'>2021 - 2021</option><option value='3'>2021 - 2022</option><option value='4'>2022 - 2022</option><option value='5'>2022 - 2023</option><option value='6'>2023 - 2024</option><option value='7'>2023 - 2023</option><option value='8'>2024 - 2025</option>                         </select>
+                        </div>
+                        <div class="col-md-4 form-group1">
+                          <label class="control-label">Bank Account</label>
+                          <select name="comboBank" id="comboBank" required="">
+                                <option value="">Select</option>                                                                                                                           
+                                    <option value='2'>Account Section - 1234</option><option value='3'>HDFC BANK LTD - 50200066236170</option><option value='1'>Punjab National Bank - 04181132000224</option>                            </select>
+                        </div>
+                        <div class="col-md-4 form-group1 form-last">
+                          <label class="control-label">Deposit Date</label>
+                          <input type="text" placeholder="dd-mm-yyyy" required="" name="txtDepositDate" id="txtDepositDate">
+                        </div>
+                        <div class="clearfix"></div>
+                        <br/>
+                        <div class="alert alert-warning" role="alert">
+                            Fee Details
+                        </div>
+                        <div class="col-md-3 form-group1">
+                          <label class="control-label">Registration Fee</label>
+                          <input type="text" name="txtRegFee" id="txtRegFee" maxlength="5" required="" onblur="addAmount();" onkeypress="disableNonNumeric(event)">
+                        </div>
+                        <div class="col-md-3 form-group1 form-last">
+                          <label class="control-label">Entrance Fee</label>
+                          <input type="text" name="txtEntFee" id="txtEntFee" maxlength="5" required="" onblur="addAmount();" onkeypress="disableNonNumeric(event)">
+                        </div>
+                        <div class="col-md-3 form-group1">
+                          <label class="control-label">Enrollment Fee</label>
+                          <input type="text" name="txtEnrollFee" id="txtEnrollFee" maxlength="5" required="" onblur="addAmount();" onkeypress="disableNonNumeric(event)">
+                        </div>
+                        <div class="col-md-3 form-group1 form-last">
+                          <label class="control-label">Tuition Fee</label>
+                          <input type="text" name="txtTuitionFee" id="txtTuitionFee" maxlength="6"  required="" onblur="addAmount();" onkeypress="disableNonNumeric(event)">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-3 form-group1">
+                          <label class="control-label">Exam Fee</label>
+                          <input type="text" name="txtExamFee" id="txtExamFee" maxlength="5"  required="" onblur="addAmount();" onkeypress="disableNonNumeric(event)">
+                        </div>
+                        <div class="col-md-3 form-group1">
+                          <label class="control-label">Caution Money</label>
+                          <input type="text" name="txtCautionFee" id="txtCautionFee" maxlength="5" required="" onblur="addAmount();" onkeypress="disableNonNumeric(event)">
+                        </div>
+                        <div class="col-md-3 form-group1">
+                          <label class="control-label">Hostel Fee</label>
+                          <input type="text" name="txtHostelFee" id="txtHostelFee" maxlength="5"  required="" onblur="addAmount();" onkeypress="disableNonNumeric(event)">
+                        </div>
+                        <div class="col-md-3 form-group1 form-last">
+                          <label class="control-label">Late Fee</label>
+                          <input type="text" name="txtLateFee" id="txtLateFee" maxlength="5"  required="" onblur="addAmount();" onkeypress="disableNonNumeric(event)">
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-3 form-group1">
+                          <label class="control-label">Miscellaneous Fee</label>
+                          <input type="text" name="txtMisFee" id="txtMisFee" maxlength="5"  required="" onblur="addAmount();" onkeypress="disableNonNumeric(event)">
+                        </div>                        
+                        <div class="col-md-3 form-group1">
+                          <label class="control-label">Total Deposit</label>
+                          <input type="text" name="txtTotalDeposit" id="txtTotalDeposit" maxlength="7"  readonly="">
+                        </div>
+                        <div class="clearfix"></div>
+                        <br/>
+                        <div class="col-md-12 form-group1-button">
+                            <button type="submit" class="btn btn-primary" name="buttSubmit" id="butSubmit">Print Bank Challan</button>
+                        </div>
+                        <div class="clearfix"> </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    </form>
+                </div>
+           </div>
+           
+           
+            <div class="copy">
+            <p><a href='https://www.facebook.com/nirwanuniversity' target="_blanck"><i class="fa fa-facebook-square fa-3x blue"></i></a>
+                &nbsp;&nbsp;<a href='https://twitter.com/nirwanuniv' target="_blanck"><i class="fa fa-twitter-square fa-3x blue"></i></a>
+                &nbsp;&nbsp;<a href='https://www.instagram.com/nirwan.university/' target="_blanck"><i class="fa fa-instagram fa-3x red"></i></a>
+                &nbsp;&nbsp;<a href='https://www.linkedin.com/company/nirwanuniversity' target="_blanck"><i class="fa fa-linkedin-square fa-3x green"></i></a>
+                &nbsp;&nbsp;<a href='https://www.youtube.com/channel/UCOKiARjW3Z1MjnSSRH_BSZw' target="_blanck"><i class="fa fa-youtube-square fa-3x red"></i></a></p><br/>
+            <p> &copy; 2021-2022 Nirwan University | Helpline: +91-9289800300</p>
+</div>
+<div style="position: fixed;right:0;bottom:0">
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Calculator</button> 
+    <div class="collapse col-md-3" id="demo" style="position: fixed;right:0;bottom:30px;">
+        <div id="micalc"> </div>
+    </div>
+</div>
+		</div>
+		</div>
+		<div class="clearfix"> </div>
+       
+     
+<!---->
+<!--scrolling js-->
+<!--	<script src="../js/jquery.nicescroll.js"></script>-->
+	<script src="../js/scripts.js"></script>
+	<!--//scrolling js-->
+        <script>
+                $("#micalc").Calculadora({'EtiquetaBorrar':'Clear'});
+        </script>   
+        </div>
+    
+</body>
+</html>

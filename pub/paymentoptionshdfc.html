@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Online Payment</title>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/font-awesome.css" rel="stylesheet"> 
+<script src="../js/jquery.min.js"> </script>
+<script src="../js/bootstrap.min.js"> </script>
+
+<!-- Mainly scripts -->
+<script src="../js/jquery.metisMenu.js"></script>
+<!--<script src="../js/jquery.slimscroll.min.js"></script>-->
+<!-- Custom and plugin javascript -->
+<link href="../css/custom.css" rel="stylesheet">
+<script src="../js/custom.js"></script>
+<link rel="stylesheet" href="https://www.digital.nirwanuniversity.ac.in/pub/bootstrap.min.css">
+
+<link rel="stylesheet" href="../css/SimpleCalculadorajQuery.css">
+<script src="../js/SimpleCalculadorajQuery.js"></script><script language="JavaScript" src="../js/ajax.js"></script>
+<script language="JavaScript" src="../js/smallfun.js"></script>
+<script type="text/javascript">
+    var courseId;
+    var request,request1;
+    function createYear() {
+         if (request1.readyState == 4) {
+             if (request1.status == 200) {
+                var combo=document.getElementById("comboYS");
+                combo.options.length=0;
+                //combo.options[0] = new Option('', 0);
+                var xmlDoc=request1.responseXML;
+                var x=xmlDoc.getElementsByTagName("YEAR");
+
+                for (i=0;i<x.length;i++)
+                   combo.options[i] = new Option(x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue,x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue);
+             }
+           }
+    }
+    function fillYear(courseId,streamId)     {
+            var param="id=" + courseId + "&sId=" + streamId;
+            request1 = xmlHttpRequestHandler.createXmlHttpRequest();
+            request1.onreadystatechange=createYear;
+            request1.open("GET","../AjaxInc/admformyear.php?"+param,true);
+            request1.send(null);
+    }
+
+    function validation() {
+        if (document.getElementById("txtName").value.length<3)
+        {
+            alert("Please enter candiadte name.");
+            return false;
+        }
+        if (document.getElementById("txtFName").value.length==0)
+        {
+            alert("Please enter father's name.");
+            return false;
+        }
+        if (document.getElementById("amount").value.length==0)
+        {
+            alert("Please enter a fee to pay");
+            return false;
+        }
+
+        return true;
+    }
+    function validation2() {
+        var regId=document.getElementById("txtRegId");
+        var enrollNum=document.getElementById("enno");
+        
+        var valid=false;
+        var valid1=false;
+        if(regId.value.length>0)
+            valid=true;
+        if(document.getElementById("enno").value.length==0){ valid1=false;}
+        else
+            valid1=true;
+        if(valid==false && valid1==false){
+            alert("Please enter either enrollment number or registration id.")
+            return false;
+        }
+        return true;
+    }
+
+window.onload = function() {
+		var d = new Date().getTime();
+		document.getElementById("tId").value = d;
+	};
+
+
+
+
+</script>
+
+<!--<script src="https://www.google.com/recaptcha/api.js?render=6LftgQQaAAAAALdYrLoFqIj7c-iK-FEbpnO_nQLc"></script>
+<script>
+    grecaptcha.ready(function() {
+                grecaptcha.execute('6LftgQQaAAAAALdYrLoFqIj7c-iK-FEbpnO_nQLc', {action: 'feepay'}).then(function(token) {
+                    $('#actionForm').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                });;
+            });
+</script>-->
+
+
+    
+</head>
+<body>
+<div id="wrapper">
+
+<!----->
+        <nav class="navbar-default navbar-static-top" role="navigation">
+             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                 
+                 <h1><a class="navbar-brand" href="javascript:void(0);"><img src="../images/logo-wide.png" border="0"/></a></h1>
+             
+             </div>
+			 <div class=" border-bottom">
+        	<div class="full-left">
+        	  
+                    <span class="name">NIRWAN UNIVERSITY, JAIPUR</span>
+                     <br/><span>Digital Payment</span>
+            <div class="clearfix"> </div>
+           </div>
+            		<div class="clearfix">
+       
+     </div> 
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                <ul class="nav-menu" id="side-menu">
+                    <li>
+                        <a href="publiclanding.php.html" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i><span class="nav-label">HOME</span><span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class=" hvr-bounce-to-right"><i class="fa fa-user nav_icon"></i><span class="nav-label">Admission</span><span class="fa arrow"></span></a>
+                        <ul class="nav-menu nav-second-level">
+                            <li><a href="javascript:void(0);" class=" hvr-bounce-to-right1"><i class="fa fa-list nav_icon"></i>Admission Procedure</a></li>
+                            <li><a href="onlineregistrationform.php.html" class=" hvr-bounce-to-right1"><i class="fa fa-user nav_icon"></i>Registration Form</a></li>
+			    <li><a href="transactionverification1.html" class=" hvr-bounce-to-right"><i class="fa fa-search nav_icon"></i><span class="nav-label">Verify Registration</span><span class="fa arrow"></span></a></li>
+	                    <li><a href="enrollmentverification.php.html" class=" hvr-bounce-to-right1"><i class="fa fa-user nav_icon"></i>Enrollment Verification</a></li>
+	                </ul>
+                    </li>    
+                    <li>
+                        <a href="javascript:void(0);" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i><span class="nav-label">Examination</span><span class="fa arrow"></span></a>
+                        <ul class="nav-menu nav-second-level">
+                            <li><a href="ennochkexam.html" class=" hvr-bounce-to-right1"><i class="fa fa-list-alt nav_icon"></i>Examination Forms</a></li>
+                            <li><a href="ennochkexamfs.html" class=" hvr-bounce-to-right1"><i class="fa fa-list-alt nav_icon"></i>Ph.D Course Work Exam Form</a></li>
+                            <li><a href="downloadhallticket.html" class=" hvr-bounce-to-right1"><i class="fa fa-list-alt nav_icon"></i>Download Hall Ticket</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="paymentoptionshdfc.html" class=" hvr-bounce-to-right"><i class="fa fa-credit-card nav_icon"></i><span class="nav-label">Pay Online</span><span class="fa arrow"></span></a>
+                        <a href="onlinetransactionverification.html" class=" hvr-bounce-to-right"><i class="fa fa-credit-card nav_icon"></i><span class="nav-label">Online Trans. Status</span><span class="fa arrow"></span></a>
+                        <a href="bankchallan.html" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i><span class="nav-label">Bank Challan</span><span class="fa arrow"></span></a>
+                    </li>
+                </ul>
+            </div>
+			</div>
+        </nav>
+<div id="page-wrapper" class="gray-bg dashbard-1">
+<div class="content-main">
+    
+    <div class="validation-system">
+ 		
+ 		<div class="validation-form">
+
+        <div class="grid-form">
+
+             <div class="grid-form1">
+                 <div class="alert alert-info" role="alert">
+                    Pay your fee
+                 </div>
+                                  
+            <form name='actionForm' action='https://www.digital.nirwanuniversity.ac.in/pub/paymentoptionshdfc.php' onsubmit='return validation2();' method='post'>  
+               <div class="vali-form">
+                    <div class="col-md-6 form-group1">
+                        <label class="control-label">Registration Id</label>
+                        <input type="text" placeholder="" name="txtRegId" id="txtRegId" maxlength="10" />
+                    </div>
+                    <div class="col-md-6 form-group1">
+                        <label class="control-label">Enrollment Number</label>
+                        <input type="text" placeholder="" name="enno" id="enno" maxlength=16 />
+                    </div>
+                   <div class="clearfix"> </div>
+                   <div class="col-md-12 form-group1-button from-last">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                   </div>
+                   <div class="clearfix"> </div>
+                        
+                        
+                </div>
+            </form>          
+                      
+             </div>
+        </div>               
+        </div>
+    </div>               
+            <div class="copy">
+            <p><a href='https://www.facebook.com/nirwanuniversity' target="_blanck"><i class="fa fa-facebook-square fa-3x blue"></i></a>
+                &nbsp;&nbsp;<a href='https://twitter.com/nirwanuniv' target="_blanck"><i class="fa fa-twitter-square fa-3x blue"></i></a>
+                &nbsp;&nbsp;<a href='https://www.instagram.com/nirwan.university/' target="_blanck"><i class="fa fa-instagram fa-3x red"></i></a>
+                &nbsp;&nbsp;<a href='https://www.linkedin.com/company/nirwanuniversity' target="_blanck"><i class="fa fa-linkedin-square fa-3x green"></i></a>
+                &nbsp;&nbsp;<a href='https://www.youtube.com/channel/UCOKiARjW3Z1MjnSSRH_BSZw' target="_blanck"><i class="fa fa-youtube-square fa-3x red"></i></a></p><br/>
+            <p> &copy; 2021-2022 Nirwan University | Helpline: +91-9289800300</p>
+</div>
+<div style="position: fixed;right:0;bottom:0">
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Calculator</button> 
+    <div class="collapse col-md-3" id="demo" style="position: fixed;right:0;bottom:30px;">
+        <div id="micalc"> </div>
+    </div>
+</div>
+		</div>
+		</div>
+		<div class="clearfix"> </div>
+       
+     
+<!---->
+<!--scrolling js-->
+<!--	<script src="../js/jquery.nicescroll.js"></script>-->
+	<script src="../js/scripts.js"></script>
+	<!--//scrolling js-->
+        <script>
+                $("#micalc").Calculadora({'EtiquetaBorrar':'Clear'});
+        </script>   
+        </div>
+</body>
+</html>
